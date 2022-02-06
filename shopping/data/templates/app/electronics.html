@@ -1,0 +1,30 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<h1 class="shadow-lg p-3 mb-5 bg-body rounded text-center">Electronics</h1>
+
+<div class="container">
+
+    <div class="row mb-3">
+        {% for el in ele %}
+        <div class="col-sm-4 mt-2 mb-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{el.product_img.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title|capfirst">{{el.title|capfirst}}</h5>
+                  <p class="card-text|capfirst">{{el.discripition|capfirst}}</p>
+                  <h4>Rs. {{el.selling_price}} <small class="fw-light text-decoration-line-through">{{el.discounted_price}}</small></h4> <br>
+                  <a href="{% url 'product-detail' el.id %}" class="btn btn-danger">Bye Now</a>
+
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock main-content %}

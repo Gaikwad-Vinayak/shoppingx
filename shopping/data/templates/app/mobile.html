@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<h1 class="shadow-lg p-3 mb-5 bg-body rounded text-center">Mobiles</h1>
+
+
+<div class="container">
+
+    <div class="row mb-3">
+        {% for mo in mobiles %}
+        <div class="col-sm-4 mt-2 mb-3">
+            <div class="card" style="width: 18rem;">
+                <img src="{{mo.product_img.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{mo.title|capfirst}}</h5>
+                  <p class="card-text">{{mo.discripition|capfirst}}</p>
+                  <h4>Rs. {{mo.selling_price}} <small class="fw-light text-decoration-line-through">{{mo.discounted_price}}</small></h4> <br>
+                  <a href="{% url 'product-detail' mo.id %}" class="btn btn-danger">Bye Now</a>
+
+                </div>
+              </div>
+        </div>
+        {% endfor %}
+    </div>
+
+</div>
+
+
+
+{% endblock main-content %}

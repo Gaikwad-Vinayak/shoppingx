@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <br>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary">logout</button>
+</form>
+{% endblock main-content %}

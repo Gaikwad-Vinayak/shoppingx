@@ -1,0 +1,40 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Buy Now{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+ <h3>welcome {{request.user|capfirst}}</h3>
+  <div class="col-sm-2 border-end">
+   <ul class="list-unstyled">
+    <li class="d-grid"><a href="{% url 'profile' %}" class="btn">Profile</a></li>
+    <li class="d-grid"><a href="{% url 'address' %}" class="btn {{active}}">Address</a></li>
+   </ul>
+  </div>
+  <div class="col-sm-9 offset-sm-1">
+   <div class="row">
+    {% for data in data %}   
+   
+    <div class="col-sm-6"> <br>
+     <div class="card">
+      <div class="card-body">
+      
+        <h3>Address{{data.id}}</h3>
+       <p>Name: {{data.name}}</p>
+       <p>Address: {{data.address}}</p>
+       <p>State: {{data.state}}</p>
+       <p>city: {{data.city}}</p>
+       <p>pin_code: {{data.pin_code}}</p>
+       <a type="submit" class="btn btn-danger" href="{% url 'deleteordersview' data.pk %}">Delete</a></button>          
+    </form>
+    
+      </div>
+      
+     </div>
+    </div>
+    {% endfor %}
+   </div>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

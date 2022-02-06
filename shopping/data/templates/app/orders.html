@@ -1,0 +1,42 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Cart{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <h1 class="text-center mb-5"></h1>
+  <div class="col-sm-8">
+  <div class="card">
+   <div class="card-body">
+    <h3>Your Orders</h3>
+    {% for op in op %}
+<hr>
+    <div class="row">
+     <div class="col-sm-3 text-center align-self-center"><img src="{{op.Product.product_img.url}}" alt="" srcset="" class="img-fluid img-thumbnail shadow-sm" height="150" width="150"> </div>
+     <div class="col-sm-9">
+      <div>
+       <h5>{{op.Product.title}}</h5><hr>
+       <h5>Quantity: <span class='bg-light'>{{op.quantity}}</span></h5>
+       <h5>Order_Date: <span class='bg-light'>{{op.order_date}}</span></h5>
+       <h5>status: <span class='bg-light'>{{op.status}}</span></h5>
+      
+       </div>
+      </div>
+     </div>
+    </div>
+    {% endfor %}
+    
+    <hr class="text-muted">
+    <div class="row my-5">
+     <div class="col-sm-3 text-center align-self-center"> </div>
+     <div class="col-sm-9"> 
+      <div>
+      
+      </div>
+     </div>
+    </div>
+   </div>
+   </div>
+  </div>
+
+{% endblock main-content %}
