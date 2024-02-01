@@ -218,3 +218,4 @@ def electronics(request):
 
 # this is new future creating by admin
 # this is updated by vinayak
+# ok thanks vinayak
