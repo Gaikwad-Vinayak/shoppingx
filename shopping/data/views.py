@@ -217,3 +217,4 @@ def electronics(request):
     return render(request,'app/electronics.html',{'ele':stu})
 
 # this is new future creating by admin
+# this is updated by vinayak
