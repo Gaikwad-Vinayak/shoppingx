@@ -215,3 +215,5 @@ class Deletecart(DeleteView):
 def electronics(request):
     stu=Product.objects.filter(category='ele')
     return render(request,'app/electronics.html',{'ele':stu})
+
+# this is new future creating by admin
